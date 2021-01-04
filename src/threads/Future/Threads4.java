@@ -1,4 +1,4 @@
-package Future;
+package threads.future;
 
 import java.util.ArrayList;
 import java.util.Date;
