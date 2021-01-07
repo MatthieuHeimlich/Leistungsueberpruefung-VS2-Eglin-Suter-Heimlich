@@ -1,0 +1,31 @@
+Übungen Network 2
+
+Übung 1:
+
+a)	Was geschieht bei einer neuen Clientanfrage im Server?
+Bei einer neue Clientanfrage im Server schaut er ob es eine neuen Input Stream gibt,
+falls dies der Fall ist wird diese angezeigt.
+
+b)	Wie kann der Server alle Clients informieren?
+Mit der Funktion esAllenWeitersagen werden alle Client informiert.
+
+Übung 2
+
+a.	Was geschieht bei einer Client-Anfrage?
+Das Programm baut ein Servet Socket auf den Port 80 auf und warte bis ein Client sich auf den Server verbindet.
+Sobald die Verbindung mit dem Client aufgebaut ist, kann man im Browser über den URL:  http://localhost eingeben.
+
+b.	Wie wird die Meldung an den Browser aufbereitet?
+Bei dem aufrufen des URL kommt die Meldung „Welcome to my Java Web Server!“ sowie auch die Zeit wird dargestellt. 
+Die Zeitmeldung wird anhand der Funktion getCurrentTimeStamp() angezeigt. In der Funktion HandleRequest wird
+die Antwort des Servers in dem HTML einkodiert und auch im Browser angezeigt.
+
+Übung 3:
+
+a.	Was geschieht, wenn der Browser die Seite index.html aufruft?
+Die PC macht eine Anfrage über den URL: http://localhost, diese Anfrage wird zum Webserver weitergeleitet. 
+Vom Webserver wird die index.html Datei gesendet und in eine lesbare Form in den Browser dargestellt.
+
+b.	Was geschieht beim Aufruf der Seite page2.html? Wie wird das Bild geladen?
+Das Bild befindet sich im Abschnitt „Body“ der HTML Datei. Um das Bild zu laden/einzufügen,
+wird die Funktion img + Datei-Pfad verwendet. Das Bild wird wie bei der index.html Datei geladen.

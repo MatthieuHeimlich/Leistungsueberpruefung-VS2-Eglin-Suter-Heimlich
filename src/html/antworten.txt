@@ -1,0 +1,95 @@
+Aufgabe 1:
+
+Aufgabe 1a: GET-Methode
+
+• Wie werden die Felder an den Server übermittelt? Wie sind Umlaute codiert? Warum?
+Die Datenfelder werden durch ein URL-Codier-/Decodier System übertragen. Zeichen mit Umlauten werden als
+%HH%HH-Rahmen übertragen, wobei H hexadezimale Werte sind. Diese Methode wird verwendet, da einige Spezialzeichen,
+wie z. B. Umlaute, in ASCII nicht verfügbar sind.
+
+• Wozu dient das fieldset -Element? Wie wird der «Titel» eines Fieldsets definiert?
+Wie wir sehen können, erlaubt das <fieldset>-Element, einen Teil eines HTML-Formulars zu gruppieren und eine
+Legende <legend> zuzuordnen, die diese Gruppe beschreibt.
+
+• Was geschieht, wenn Sie ein Label mit der Maus anklicken?
+Wenn wir auf eine Beschriftung klicken, bewegt sich unser Cursor in das entsprechende Texteingabefeld.
+
+• Wie werden die label -Elemente mit den Eingabefeldern verknüpft?
+In dem Label befindet sich ein "for", das den gleichen Namen hat wie die "id", die im folgenden Input enthalten ist. Das Label und die Aktion sind also durch diese beiden Variablen miteinander verbunden.
+Beispiel:
+<label for="login_get">Benutzername:</label>
+<input type="text" id="login_get" name="login"/>
+
+• Wozu dient das name -Attribut? Kann es weggelassen werden?
+Der "Name" wird zur Übertragung der Informationen verwendet. Wenn es nicht vorhanden ist,
+wird die Information nicht übertragen und wäre somit nutzlos.
+
+• Wie kann man Eingabewerte in den Feldern vordefinieren?
+Die Funktion "value" dient zum Vorbefüllen der Datenfelder.
+
+• Studieren Sie die vom serverseitigen Script ausgegebenen Environment-Variablen. Welche Informationen kann man diesen entnehmen? Wird auch ausgegeben, von welchem Computer die Formulardaten geschickt wurden?
+Die erzeugten Informationen sind die Argumente (Benutzername, Passwort,…), die Header (Portnummer, Informationen über den Computer,
+Informationen über den Webbrowser,...) und die URL. Wir wissen nicht, welcher Computer die Anfrage sendet,
+weil keine IP- oder MAC-Adresse übertragen wird.
+
+• Analysieren Sie im Browser mit Hilfe der Entwicklertools – Tab Netzwork den Request und den Response: Wozu dienen die Angaben: user-agent, accept, host, content-length, content-type, scheme, method, status
+Der User-Agent-Request ist eine charakteristische Zeichenfolge, die es Servern und Netzwerk-Peers ermöglicht, die Anwendung,
+das Betriebssystem, den Hersteller und/oder die Version des anfragenden User-Agent zu identifizieren.
+Das accept-Attribut nimmt als Wert eine durch Komma getrennte Liste von einem oder mehreren Dateitypen oder eindeutigen Dateityp-Spezifikationen an,
+die beschreiben, welche Dateitypen zugelassen werden sollen. Die Eigenschaft accept ist ein Attribut des Typs file <input>.
+Sie wurde für das <form>-Element unterstützt, wurde aber in HTML5 zugunsten von file entfernt.
+Die Variable "host" besteht aus dem Domänennamen (postman-echo) und der Erweiterung des Domänennamens (.com).
+Der Header Content-Length gibt die Größe des Körpers der an den Client gesendeten Antwort in Bytes (ausgedrückt zur Basis 10) an.
+Content.type liefert den Typ der übertragenen Information
+Der Zweck des HTML-Schema-Attributs ist es, ein Schema anzugeben, das verwendet werden kann, um den Wert des Content-Attribut des zugehörigen Meta-Elements darzustellen.
+Die HTTP-Response-Statusanzeigen geben an, ob eine HTTP-Anfrage erfolgreich abgeschlossen wurde oder nicht.
+
+
+Aufgabe 1b: Post-Methode
+
+• Was ist der Unterschied bei der Übertragung der Daten? Verwenden Sie die Browserentwicklertools, um den Datenaustausch zwischen dem Browser und Server zu beobachten.
+Das größte Unterschied zwischen GET und POST ist, dass GET die Daten an den Server durch den URL übertragt,
+wobei POST die Daten in den http-Request übermittelt.
+
+• Würden Sie für dieses Formular GET oder POST bevorzugen? Warum?
+In diesem Fall wäre es besser die POST-Methode zu verwenden, da die Daten nicht in den URL angezeigt werden.
+Persönliche Daten, wie das Passwort, wären in den URL sichtbar, wenn die GET-Methode benutzt wurde.
+
+
+Aufgabe 1c: Umfangreicheres Formular
+
+• Wie werden mehrere Werte bei einer Mehrfachselektion übertragen? Verwenden Sie die Entwicklertools des Browsers. Hinweis: Das PHP-Script, das die Daten entgegen nimmt, liefert alle ausgewählten Elemente in einem Array, wenn das name -Attribut auf [] endet, z.B.: name="course[]".
+In der Fall einer Mehrfachselektion werden die Daten als Array übertragen in der Form: "Kurse":["Kurs1","Kurs2","Kurs3","Kurs4"].
+
+• Ergänzen Sie noch ein input -Feld vom Typ hidden und geben diesem ein name - und ein value - Attribut. Kommt der Wert ebenfalls am Server an? Wozu sind Felder vom Typ hidden gut und zu welchem Zweck können sie verwendet werden?
+Der Wert des hidden Attribut kaum auch an den Server. Das Feld wird nur auf der Seite nicht angezeigt.
+Das kann von dem Programmierer benutzt werden, um Daten an den Server zu schicken, die nicht verändert sein sollen.
+
+
+Aufgabe 1d: HTML5 Möglichkeiten in Formularen
+
+• Wie können die Formularfelder validiert werden?
+Formularfehlder können validiert werden, indem man unter html 5 die Angaben Typ definiert.
+Zum Beispiel wird für eine E-Mail-Adresse den Typ "email" gewählt. Dann kann nur eine E-Mail-Adresse reingegeben werden.
+
+• Wie können Sie Pflichtfelder definieren?
+Pflichtfelder werden mit Attribut "required" definiert. Dann muss das Feld ausgefühlt sein, wenn das Formular geschickt wird.
+<input required="true" type="email" id="email1" name="email1" />
+
+• Wird das Formular bei Validierungsfehlern übermittelt?
+Nein, das Formular wird nicht gesendet. Das Feld, das nicht validiert ist, wird angezeigt.
+
+• Wie können Sie die Felder mit einem Musterinhalt belegen, der entfernt wird, sobald Sie das Feld anwählen?
+Mit den Attribut placeholder kann das Feld mit ein Musterinhalt belegt werden.
+Zum Beispiel: placeholder="example@email.com" belegt das Feld mit example@email.com.
+
+• Wie können Sie den Fokus/Cursor nach dem Laden der Seite automatisch in einem bestimmten Feld positionieren? (ohne JavaScript)
+Mit den Attribut autofocus geht den Cursor automatisch auf ein Feld nachdem Laden der Seite.
+
+
+Aufgbe3: Einbinden einer CSS-Datei
+
+• Wie können Sie den Fokus/Curso
+
+Es gibt Verbesserungsmöglichkeiten. Man könnte sogenannten Markup benutzen, um das HTML-Datei zu strukturieren,
+somit könnte, zum Beispiel, die Navigation in ein Navbar sein und nicht mehr in den Header. Man könnte auch den main-Element verwenden.
