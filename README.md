@@ -10,4 +10,4 @@ Folgende Übungen wurden komplett bearbeitet:
 - Praktikum Markup und HTML: OK
 - Skripte Datenbanken Praktikum 2 - 4: OK
 
-Für den Übung Network 2 und den Praktikum Markup und HTML finden Sie die Antworten zu den Fragen jedes Mal in den Datei antworten.txt.
+Für den Übung Network 2 und den Praktikum Markup und HTML finden Sie die Antworten zu den Fragen jedes Mal in den Datei "antworten.txt".
